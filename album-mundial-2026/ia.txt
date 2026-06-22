@@ -1,0 +1,26 @@
+=== Etapa 1 ===
+Prompt: 
+Resultado:
+Utilidad: 
+
+=== Etapa 2 ===
+Prompt: 
+Resultado:
+Utilidad: 
+
+=== Etapa 3 ===
+Prompt: 
+Resultado:
+Utilidad: 
+
+=== Etapa 4 ===
+Prompt: 
+Resultado:
+Utilidad: 
+
+
+=== Etapa 5 ===
+Prompt: 
+Resultado:
+Utilidad: 
+
