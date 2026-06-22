@@ -1,7 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { stickers } from './data/stickers'
+import AlbumSummary from './components/AlbumSummary'
 import Sticker from './components/Sticker'
+
+const STORAGE_KEY = 'album-sticker-status'
 
 const FILTER_OPTIONS = [
   { label: 'Todas', value: 'todas' },
@@ -11,11 +14,35 @@ const FILTER_OPTIONS = [
 ]
 
 function App() {
-  const [stickerStatus, setStickerStatus] = useState(
-    () => Object.fromEntries(stickers.slice(0, 10).map((sticker) => [sticker.id, 'falta']))
-  )
+  const [stickerStatus, setStickerStatus] = useState(() => {
+    if (typeof window === 'undefined') {
+      return Object.fromEntries(stickers.slice(0, 10).map((sticker) => [sticker.id, 'falta']))
+    }
+
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (!stored) {
+      return Object.fromEntries(stickers.slice(0, 10).map((sticker) => [sticker.id, 'falta']))
+    }
+
+    try {
+      const parsed = JSON.parse(stored)
+      if (parsed && typeof parsed === 'object') {
+        return Object.fromEntries(
+          stickers.slice(0, 10).map((sticker) => [sticker.id, parsed[sticker.id] || 'falta'])
+        )
+      }
+    } catch (error) {
+      console.warn('No se pudo leer el estado del álbum desde localStorage', error)
+    }
+
+    return Object.fromEntries(stickers.slice(0, 10).map((sticker) => [sticker.id, 'falta']))
+  })
   const [searchQuery, setSearchQuery] = useState('')
   const [filterStatus, setFilterStatus] = useState('todas')
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(stickerStatus))
+  }, [stickerStatus])
 
   const handleStatusChange = (id) => {
     setStickerStatus((previous) => {
@@ -56,6 +83,7 @@ function App() {
 
   return (
     <main>
+      <AlbumSummary stickerStatus={stickerStatus} />
       <section id="stickers">
         <h2>Figuritas (muestra)</h2>
         <div className="stickers-toolbar">

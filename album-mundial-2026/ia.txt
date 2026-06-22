@@ -32,7 +32,13 @@ Utilidad: parcialmente util.
 
 
 === Etapa 5 ===
-Prompt: 
-Resultado:
-Utilidad: 
+Prompt: Crea un panel de estadisticas que persista en el estado en localStorage.
+para empezar, crea un componente "AlbumSummary.jsx" que muestre lo siguiente: total de figuras, cuántas están repetidas, cuántas faltan y el procentaje de completitud del album.
+
+Es muy importante que hagas uso de "useEffect" para guardar el estado en localStorage cada vez que cambie. También usa "useEffect" para recuperar el estado guardado en LocalStorage al cargar la app, es crucial que, por más que el usuario recargue la página, los datos permanezcan como quedaron guardados antes de recargar.
+
+prompt 2:existe un problema de comunicación en localStorage, ya que los datos no se guardan a refescar la pagina como había pedido. Haz que funcione de manera correcta.
+
+Resultado:Al principio se creó de manera correcta el panel de estadisticas, pero falló al cargar la pagina, ya que los datos no se guardaban.
+Utilidad: parcialmente util.
 
