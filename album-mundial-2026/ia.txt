@@ -16,14 +16,19 @@ Resultado:El primer resultado fue algo deficiente; las figuritas no mostraban to
 Utilidad: parcialmente util.
 
 === Etapa 3 ===
-Prompt: 
-Resultado:
-Utilidad: 
+Prompt: vamos a crear la interacción de usuario. Necesito que en #file:App.jsx uses "useState" para manejar los estados de las figuritas { [id]: "falta" | "tengo" | "repetida" }
+
+Además, todas deben iniciar en el estado "falta". Debes crear una función handleStatusChange(id) que cambie el estado de la figura en el siguiente orden: falta > tengo > repetida > falta.
+
+pasa la función como props a StickerCard y ejecutala al hacer click en la tarjeta. Es importante que el componente muestre visualmente el estado y que cambie al hacer click.
+Resultado: cumplió de manera eficiente las instruciones. 
+Utilidad: Fui muy util.
 
 === Etapa 4 ===
-Prompt: 
-Resultado:
-Utilidad: 
+Prompt: vamos a añadir filtros y búsquedas. para empezar, agregar un campo de búsqueda de texto con "useState" y que filtre las figurtas por nombre y número. También agrega botones o un selector para filtrar "todas, "tengo", "repetidas". Necesito que apliques ambos filtros simultaneamente sobre el array antes de renderizar las tarjetas. Por último, muestra el total de figuras visibles según el filtro activo.
+prompt 2: agrega "falta" al filtro de búsquedas y hazlo funcionar siguiendo los mismos parámetros. Además, haz que las letras sean visiables antes de yo hacer click sobre el filtro de búsqueda.
+Resultado:cumplió con los filtros, pero las letras no son legibles a pesar de haberle pedido lo contrario.
+Utilidad: parcialmente util.
 
 
 === Etapa 5 ===

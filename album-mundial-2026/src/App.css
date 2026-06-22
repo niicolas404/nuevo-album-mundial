@@ -184,6 +184,60 @@
 }
 
 /* Stickers grid and card styles */
+.stickers-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  gap: 12px;
+  align-items: end;
+  margin: 16px 0 20px;
+}
+
+.search-field {
+  display: grid;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.search-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  background: #fff;
+  color: #111;
+}
+
+.search-field input::placeholder {
+  color: #666;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  padding: 10px 14px;
+  border: 1px solid #c1c1c1;
+  border-radius: 999px;
+  background: #f6f6f6;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.filter-button.active {
+  background: #252525;
+  color: #fff;
+  border-color: #252525;
+}
+
+.visible-count {
+  font-size: 0.95rem;
+  color: #333;
+  justify-self: end;
+}
+
 .stickers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
