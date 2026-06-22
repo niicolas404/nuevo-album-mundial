@@ -1,7 +1,14 @@
 === Etapa 1 ===
-Prompt: 
-Resultado:
-Utilidad: 
+Prompt: Vamos a crear un componente reutilizable. Para empezar, se debe considerar la información en #file:stickers.js para crear el componente. Los props que debe recibir son "number, name, group, status". Además, se debe poder mostrar la información de la figurita de forma visual (numero, nombre, grupo). Aplica estilos básicos según el status: quiero un fondo verde para "tengo" amarillo para "repetida" Y gris para "falta".
+
+en #file:App.jsx renderiza al menos 10 figuritas usando el componente, pasando los datos desde el array importado.
+en #file:App.jsx borra todo lo referente a la pagina por defecto. Es importante que solo se muestre lo que estoy pidiendo.
+
+prompt 2: veo que las figuritas no cuentan con toda la información que pedí. Necesito que en todas se muestre número, nombre y grupo.
+
+
+Resultado:El primer resultado fue algo deficiente; las figuritas no mostraban toda la información, por lo qu etuve que recurrir a una segunda instrcción.
+Utilidad: parcialmente util.
 
 === Etapa 2 ===
 Prompt: 
